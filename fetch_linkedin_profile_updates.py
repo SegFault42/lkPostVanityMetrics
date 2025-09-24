@@ -79,9 +79,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--count",
-        type=int,
-        default=20,
-        help="Page size for each request (default: 20, must be <= 100).",
+        default="20",
+        help="Page size for each request (default: 20, must be <= 100). Use 'all' to fetch with the maximum page size until pagination ends.",
     )
     parser.add_argument(
         "--start",
@@ -290,6 +289,7 @@ def simplify_update(
     update: Dict[str, Any],
     index: Dict[str, Dict[str, Any]],
     include_raw: bool,
+    social_counts: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
     commentary = None
     for key in ("commentaryV2", "commentary", "header", "body"):
@@ -301,6 +301,7 @@ def simplify_update(
     actor_info = simplify_actor(update.get("actor") or update.get("actorUrn"), index)
     content_entities = simplify_content_entities(update.get("content"))
 
+    entity_urn = update.get("entityUrn")
     simplified: Dict[str, Any] = {
         "entityUrn": update.get("entityUrn"),
         "type": update.get("updateType") or update.get("$type"),
@@ -313,6 +314,26 @@ def simplify_update(
         "commentary": commentary,
         "contentEntities": content_entities if content_entities else None,
     }
+
+    social = None
+    if isinstance(entity_urn, str):
+        social = social_counts.get(entity_urn)
+        if not social and entity_urn.endswith(")"):
+            # Strip update URN wrapper to match social counts keyed by activity URN.
+            inner_start = entity_urn.find("(")
+            if inner_start != -1:
+                inner = entity_urn[inner_start + 1 : -1]
+                social = social_counts.get(inner)
+    if not social:
+        # Social counts can also be stored under preDashEntityUrn.
+        pre_dash = update.get("preDashEntityUrn") or update.get("dashEntityUrn")
+        if isinstance(pre_dash, str):
+            social = social_counts.get(pre_dash)
+
+    if isinstance(social, dict):
+        simplified["numLikes"] = social.get("numLikes")
+        simplified["numComments"] = social.get("numComments")
+        simplified["numShares"] = social.get("numShares")
 
     if not simplified["contentEntities"]:
         simplified.pop("contentEntities")
@@ -332,16 +353,31 @@ def index_included(payload: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
 
 
 def get_updates_section(payload: Dict[str, Any]) -> Dict[str, Any]:
-    data = payload.get("data")
-    if not isinstance(data, dict):
-        return {}
-    for key in (
-        "voyagerFeedDashProfileUpdates",
-        "feedDashProfileUpdatesByMemberShareFeed",
-    ):
-        section = data.get(key)
-        if isinstance(section, dict):
-            return section
+    """Attempt to locate the portion of the payload with items/metadata."""
+    data_root = payload.get("data") if isinstance(payload, dict) else None
+    queue: List[Dict[str, Any]] = []
+    if isinstance(data_root, dict):
+        queue.append(data_root)
+    visited: set[int] = set()
+
+    while queue:
+        node = queue.pop(0)
+        node_id = id(node)
+        if node_id in visited:
+            continue
+        visited.add(node_id)
+
+        if isinstance(node.get("items"), list):
+            return node
+
+        for value in node.values():
+            if isinstance(value, dict):
+                queue.append(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        queue.append(item)
+
     return {}
 
 
@@ -422,18 +458,37 @@ def harvest_organization_reactions(
 
 
 def extract_pagination_token(payload: Dict[str, Any]) -> Optional[str]:
+    """Search the payload for the next pagination token, if any."""
+
+    def scan(obj: Any) -> Optional[str]:
+        queue: List[Any] = [obj]
+        visited: set[int] = set()
+        while queue:
+            current = queue.pop(0)
+            current_id = id(current)
+            if current_id in visited:
+                continue
+            visited.add(current_id)
+
+            if isinstance(current, dict):
+                token = current.get("paginationToken")
+                if isinstance(token, str):
+                    return token
+                for value in current.values():
+                    if isinstance(value, (dict, list)):
+                        queue.append(value)
+            elif isinstance(current, list):
+                for item in current:
+                    if isinstance(item, (dict, list)):
+                        queue.append(item)
+        return None
+
     section = get_updates_section(payload)
-    metadata = section.get("metadata") if isinstance(section, dict) else None
-    if isinstance(metadata, dict):
-        token = metadata.get("paginationToken")
-        if isinstance(token, str):
+    if section:
+        token = scan(section)
+        if token:
             return token
-    paging = section.get("paging") if isinstance(section, dict) else None
-    if isinstance(paging, dict):
-        token = paging.get("paginationToken")
-        if isinstance(token, str):
-            return token
-    return None
+    return scan(payload)
 
 
 def fetch_profile_updates(
@@ -489,6 +544,7 @@ def fetch_all_updates(
     org_reactions: Dict[str, Dict[str, Any]] = {}
     cursor = start
     pagination_token: Optional[str] = None
+    seen_tokens: set[str] = set()
 
     while True:
         payload = fetch_profile_updates(
@@ -519,6 +575,7 @@ def fetch_all_updates(
                 )
         else:
             index = index_included(payload)
+            harvest_social_counts(payload, social_counts)
             order, updates = collect_updates(payload)
 
             new_in_page = 0
@@ -528,7 +585,9 @@ def fetch_all_updates(
                 update = updates.get(urn)
                 if not update:
                     continue
-                collected.append(simplify_update(update, index, include_raw))
+                collected.append(
+                    simplify_update(update, index, include_raw, social_counts)
+                )
                 seen.add(urn)
                 new_in_page += 1
                 if limit and len(collected) >= limit:
@@ -550,17 +609,13 @@ def fetch_all_updates(
         section = get_updates_section(payload)
         items = section.get("items", []) if isinstance(section, dict) else []
         next_token = extract_pagination_token(payload)
-        if (
-            new_in_page == 0
-            and not social_counts_only
-            and not organization_reactions_only
-        ):
-            # Prevent endless loops if the API keeps returning duplicates.
-            break
         if len(items) < count and not next_token:
             break
         if not next_token:
             break
+        if next_token in seen_tokens:
+            break
+        seen_tokens.add(next_token)
         pagination_token = next_token
         cursor += count
 
@@ -589,6 +644,25 @@ def main() -> None:
         raise SystemExit(
             "--social-counts-only and --organization-reactions-only are mutually exclusive"
         )
+
+    count_arg = args.count
+    if isinstance(count_arg, str):
+        if count_arg.lower() == "all":
+            count_value = 100
+        else:
+            try:
+                count_value = int(count_arg)
+            except ValueError as exc:
+                raise SystemExit(f"Invalid value for --count: {count_arg}") from exc
+    else:
+        count_value = int(count_arg)
+
+    if count_value <= 0:
+        raise SystemExit("--count must be a positive integer or 'all'")
+    if count_value > 100:
+        raise SystemExit("--count cannot exceed 100")
+
+    args.count = count_value
 
     session = build_session(cookie_header, csrf_token, args.referer, args.header)
     updates = fetch_all_updates(

@@ -1,6 +1,106 @@
 [
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 52,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7358413873315471360",
+    "numComments": 22,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 38,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 7,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7358413873315471360",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7358413873315471360"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 36,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -93,6 +193,90 @@
   },
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 33,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7363904665496784897",
+    "numComments": 11,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Thomas Stocker",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 14,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAABsnz2MBJL18pPQvhN1BDn-AIadUUBLW6iQ",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 29,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7363904665496784897",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7363904665496784897"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 104,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -174,6 +358,90 @@
     "numImpressions": null,
     "reacted": null,
     "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7367183948013019137"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 37,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7362827400595865600",
+    "numComments": 11,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 34,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7362827400595865600",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7362827400595865600"
   },
   {
     "reactionByOrganizationActor": null,
@@ -277,14 +545,14 @@
   },
   {
     "reactionByOrganizationActor": null,
-    "numLikes": 45,
+    "numLikes": 62,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
     ],
     "liked": false,
     "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
-    "urn": "urn:li:activity:7368578671835508736",
-    "numComments": 26,
+    "urn": "urn:li:activity:7364635989379538944",
+    "numComments": 27,
     "highlightedReactorName": {
       "textDirection": "USER_LOCALE",
       "text": "Mathieu Dacheux",
@@ -329,7 +597,7 @@
     },
     "reactionTypeCounts": [
       {
-        "count": 32,
+        "count": 52,
         "reactionType": "LIKE",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -337,15 +605,7 @@
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       },
       {
-        "count": 10,
-        "reactionType": "ENTERTAINMENT",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 2,
+        "count": 3,
         "reactionType": "EMPATHY",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -353,184 +613,8 @@
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       },
       {
-        "count": 1,
-        "reactionType": "INTEREST",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      }
-    ],
-    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7368578671835508736",
-    "numShares": 0,
-    "numImpressions": null,
-    "reacted": null,
-    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7368578671835508736"
-  },
-  {
-    "reactionByOrganizationActor": null,
-    "numLikes": 27,
-    "$recipeTypes": [
-      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
-    ],
-    "liked": false,
-    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
-    "urn": "urn:li:ugcPost:7376191080846872577",
-    "numComments": 12,
-    "highlightedReactorName": {
-      "textDirection": "USER_LOCALE",
-      "text": "Mathieu Dacheux",
-      "attributesV2": [
-        {
-          "start": 0,
-          "length": 15,
-          "detailData": {
-            "jobPostingName": null,
-            "hyperlink": null,
-            "profileFamiliarName": null,
-            "color": null,
-            "companyName": null,
-            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
-            "icon": null,
-            "epoch": null,
-            "systemImage": null,
-            "textLink": null,
-            "listItemStyle": null,
-            "groupName": null,
-            "hyperlinkOpenExternally": null,
-            "listStyle": null,
-            "stringFieldReference": null,
-            "learningCourseName": null,
-            "profileMention": null,
-            "style": null,
-            "schoolName": null,
-            "hashtag": null
-          },
-          "$recipeTypes": [
-            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
-          ],
-          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
-        }
-      ],
-      "accessibilityTextAttributesV2": [],
-      "accessibilityText": null,
-      "$recipeTypes": [
-        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
-      ],
-      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-    },
-    "reactionTypeCounts": [
-      {
-        "count": 20,
-        "reactionType": "LIKE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 2,
-        "reactionType": "EMPATHY",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 2,
-        "reactionType": "PRAISE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 2,
+        "count": 3,
         "reactionType": "APPRECIATION",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 1,
-        "reactionType": "INTEREST",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      }
-    ],
-    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7376191080846872577",
-    "numShares": 0,
-    "numImpressions": null,
-    "reacted": null,
-    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7376191080846872577"
-  },
-  {
-    "reactionByOrganizationActor": null,
-    "numLikes": 37,
-    "$recipeTypes": [
-      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
-    ],
-    "liked": false,
-    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
-    "urn": "urn:li:activity:7367836095998345216",
-    "numComments": 6,
-    "highlightedReactorName": {
-      "textDirection": "USER_LOCALE",
-      "text": "Mathieu Dacheux",
-      "attributesV2": [
-        {
-          "start": 0,
-          "length": 15,
-          "detailData": {
-            "jobPostingName": null,
-            "hyperlink": null,
-            "profileFamiliarName": null,
-            "color": null,
-            "companyName": null,
-            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
-            "icon": null,
-            "epoch": null,
-            "systemImage": null,
-            "textLink": null,
-            "listItemStyle": null,
-            "groupName": null,
-            "hyperlinkOpenExternally": null,
-            "listStyle": null,
-            "stringFieldReference": null,
-            "learningCourseName": null,
-            "profileMention": null,
-            "style": null,
-            "schoolName": null,
-            "hashtag": null
-          },
-          "$recipeTypes": [
-            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
-          ],
-          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
-        }
-      ],
-      "accessibilityTextAttributesV2": [],
-      "accessibilityText": null,
-      "$recipeTypes": [
-        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
-      ],
-      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
-    },
-    "reactionTypeCounts": [
-      {
-        "count": 27,
-        "reactionType": "LIKE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 4,
-        "reactionType": "ENTERTAINMENT",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
         ],
@@ -551,29 +635,13 @@
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
         ],
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 1,
-        "reactionType": "EMPATHY",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 1,
-        "reactionType": "APPRECIATION",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       }
     ],
-    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7367836095998345216",
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7364635989379538944",
     "numShares": 0,
     "numImpressions": null,
     "reacted": null,
-    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7367836095998345216"
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7364635989379538944"
   },
   {
     "reactionByOrganizationActor": null,
@@ -658,6 +726,382 @@
     "numImpressions": null,
     "reacted": null,
     "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7372599001356935168"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 39,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7364232931336155137",
+    "numComments": 13,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 35,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7364232931336155137",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7364232931336155137"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 33,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7344329431798177792",
+    "numComments": 12,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Virgile RIETSCH",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAABD-ER4B7QvX6_q2lhxth0Jax-JOAaa05G0",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 22,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 8,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7344329431798177792",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7344329431798177792"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 119,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7360218369645584384",
+    "numComments": 42,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 94,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 18,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7360218369645584384",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7360218369645584384"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 61,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7358064252751888384",
+    "numComments": 24,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 45,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 8,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7358064252751888384",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7358064252751888384"
   },
   {
     "reactionByOrganizationActor": null,
@@ -753,6 +1197,350 @@
   },
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 38,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7348700764376064000",
+    "numComments": 27,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 20,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 16,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7348700764376064000",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7348700764376064000"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 84,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7358785299180572672",
+    "numComments": 29,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 71,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 7,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7358785299180572672",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7358785299180572672"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 52,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7354119585240883200",
+    "numComments": 42,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 41,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7354119585240883200",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7354119585240883200"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 64,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7348285328417255425",
+    "numComments": 20,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 52,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 12,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7348285328417255425",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7348285328417255425"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 34,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -826,6 +1614,98 @@
     "numImpressions": null,
     "reacted": null,
     "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7369622832810602496"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 46,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7365298918504505345",
+    "numComments": 17,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 39,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7365298918504505345",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7365298918504505345"
   },
   {
     "reactionByOrganizationActor": null,
@@ -1037,6 +1917,182 @@
   },
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 40,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7346108039860547585",
+    "numComments": 11,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 23,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 16,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7346108039860547585",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7346108039860547585"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 41,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7349763916706549760",
+    "numComments": 18,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 27,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7349763916706549760",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7349763916706549760"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 35,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -1129,6 +2185,174 @@
   },
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 29,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7359374885053161473",
+    "numComments": 8,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 26,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7359374885053161473",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7359374885053161473"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 24,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7344703816019132416",
+    "numComments": 11,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 19,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7344703816019132416",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7344703816019132416"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 30,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -1194,6 +2418,98 @@
     "numImpressions": null,
     "reacted": null,
     "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7368192156940902402"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 87,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7361401227424768000",
+    "numComments": 24,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 74,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 8,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7361401227424768000",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7361401227424768000"
   },
   {
     "reactionByOrganizationActor": null,
@@ -1278,6 +2594,2189 @@
     "numImpressions": null,
     "reacted": null,
     "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7369277808046555140"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 90,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7348994046305964032",
+    "numComments": 36,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 60,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 25,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7348994046305964032",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7348994046305964032"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 24,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7373340303887454208",
+    "numComments": 16,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 16,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7373340303887454208",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7373340303887454208"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 66,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7366755721679433728",
+    "numComments": 32,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 57,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7366755721679433728",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7366755721679433728"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 84,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7361732859889389569",
+    "numComments": 20,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Maher Sami",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 10,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAABSW_DQBRTQ3P5qVDoBaHG3-PZZ0ciOAe7I",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 69,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 7,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7361732859889389569",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7361732859889389569"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 59,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7355554341484666880",
+    "numComments": 30,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 37,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 19,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7355554341484666880",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7355554341484666880"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 48,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7365639359326261248",
+    "numComments": 27,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 45,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7365639359326261248",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7365639359326261248"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 85,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7360591515523420160",
+    "numComments": 57,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 46,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 32,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7360591515523420160",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7360591515523420160"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 519,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7371113588356222977",
+    "numComments": 67,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 456,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 43,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 7,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 7,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7371113588356222977",
+    "numShares": 9,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7371113588356222977"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 54,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7363160946321547265",
+    "numComments": 25,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 45,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 8,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7363160946321547265",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7363160946321547265"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 47,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7357303447408234497",
+    "numComments": 54,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 33,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 11,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7357303447408234497",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7357303447408234497"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 208,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7362441138517024768",
+    "numComments": 30,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 176,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 17,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 10,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7362441138517024768",
+    "numShares": 2,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7362441138517024768"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 64,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7360931830545432577",
+    "numComments": 52,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 32,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 28,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7360931830545432577",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7360931830545432577"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 45,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7368578671835508736",
+    "numComments": 26,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 32,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 10,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7368578671835508736",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7368578671835508736"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 28,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7376191080846872577",
+    "numComments": 12,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 21,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7376191080846872577",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7376191080846872577"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 37,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7367836095998345216",
+    "numComments": 6,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 27,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7367836095998345216",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7367836095998345216"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 43,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7359196132276588545",
+    "numComments": 16,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 35,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7359196132276588545",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7359196132276588545"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 66,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7346830360812371968",
+    "numComments": 26,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 42,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 21,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7346830360812371968",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7346830360812371968"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 58,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7356242775668887552",
+    "numComments": 22,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 40,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 10,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7356242775668887552",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7356242775668887552"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 63,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7354453302761144320",
+    "numComments": 60,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 46,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 13,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7354453302761144320",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7354453302761144320"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 68,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7353370215251910656",
+    "numComments": 31,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 55,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 6,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7353370215251910656",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7353370215251910656"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 84,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7354785458884648960",
+    "numComments": 10,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 72,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 5,
+        "reactionType": "ENTERTAINMENT",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 4,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7354785458884648960",
+    "numShares": 1,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7354785458884648960"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 30,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7346472138645680128",
+    "numComments": 5,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Ahmed Naciri",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 12,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAAA4kxWYBljEZUGOsjbgR5d5lHb2BS2eG6Lw",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 28,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7346472138645680128",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7346472138645680128"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 31,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7347170172186624000",
+    "numComments": 6,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 29,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7347170172186624000",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7347170172186624000"
+  },
+  {
+    "reactionByOrganizationActor": null,
+    "numLikes": 13,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:ugcPost:7356579829783187456",
+    "numComments": 11,
+    "highlightedReactorName": null,
+    "reactionTypeCounts": [
+      {
+        "count": 12,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "APPRECIATION",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7356579829783187456",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7356579829783187456"
   },
   {
     "reactionByOrganizationActor": null,
@@ -1455,8 +4954,8 @@
     ],
     "liked": false,
     "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
-    "urn": "urn:li:activity:7373340303887454208",
-    "numComments": 16,
+    "urn": "urn:li:activity:7347924419475914753",
+    "numComments": 11,
     "highlightedReactorName": {
       "textDirection": "USER_LOCALE",
       "text": "Mathieu Dacheux",
@@ -1501,7 +5000,7 @@
     },
     "reactionTypeCounts": [
       {
-        "count": 16,
+        "count": 19,
         "reactionType": "LIKE",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -1510,14 +5009,6 @@
       },
       {
         "count": 4,
-        "reactionType": "PRAISE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 3,
         "reactionType": "EMPATHY",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -1526,18 +5017,18 @@
       },
       {
         "count": 1,
-        "reactionType": "ENTERTAINMENT",
+        "reactionType": "APPRECIATION",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
         ],
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       }
     ],
-    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7373340303887454208",
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7347924419475914753",
     "numShares": 0,
     "numImpressions": null,
     "reacted": null,
-    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7373340303887454208"
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7347924419475914753"
   },
   {
     "reactionByOrganizationActor": null,
@@ -1649,6 +5140,98 @@
   },
   {
     "reactionByOrganizationActor": null,
+    "numLikes": 53,
+    "$recipeTypes": [
+      "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
+    ],
+    "liked": false,
+    "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
+    "urn": "urn:li:activity:7356935215736389632",
+    "numComments": 29,
+    "highlightedReactorName": {
+      "textDirection": "USER_LOCALE",
+      "text": "Mathieu Dacheux",
+      "attributesV2": [
+        {
+          "start": 0,
+          "length": 15,
+          "detailData": {
+            "jobPostingName": null,
+            "hyperlink": null,
+            "profileFamiliarName": null,
+            "color": null,
+            "companyName": null,
+            "*profileFullName": "urn:li:fsd_profile:ACoAADrd8tsBZUl_Av4K3JWp6BLlDcX4X_bS5iA",
+            "icon": null,
+            "epoch": null,
+            "systemImage": null,
+            "textLink": null,
+            "listItemStyle": null,
+            "groupName": null,
+            "hyperlinkOpenExternally": null,
+            "listStyle": null,
+            "stringFieldReference": null,
+            "learningCourseName": null,
+            "profileMention": null,
+            "style": null,
+            "schoolName": null,
+            "hashtag": null
+          },
+          "$recipeTypes": [
+            "com.linkedin.067af41167b1f8f903ed7aacca6635ca"
+          ],
+          "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+        }
+      ],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+        "com.linkedin.63752f0aa03880ae8102a422f3b02519"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "reactionTypeCounts": [
+      {
+        "count": 47,
+        "reactionType": "LIKE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 3,
+        "reactionType": "EMPATHY",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 2,
+        "reactionType": "INTEREST",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      },
+      {
+        "count": 1,
+        "reactionType": "PRAISE",
+        "$recipeTypes": [
+          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
+        ],
+        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
+      }
+    ],
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7356935215736389632",
+    "numShares": 0,
+    "numImpressions": null,
+    "reacted": null,
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7356935215736389632"
+  },
+  {
+    "reactionByOrganizationActor": null,
     "numLikes": 35,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
@@ -1741,14 +5324,14 @@
   },
   {
     "reactionByOrganizationActor": null,
-    "numLikes": 519,
+    "numLikes": 58,
     "$recipeTypes": [
       "com.linkedin.b1ab8a81dc27dd81cbc2c343044d1350"
     ],
     "liked": false,
     "$type": "com.linkedin.voyager.dash.feed.SocialActivityCounts",
-    "urn": "urn:li:activity:7371113588356222977",
-    "numComments": 67,
+    "urn": "urn:li:ugcPost:7349381286903402496",
+    "numComments": 33,
     "highlightedReactorName": {
       "textDirection": "USER_LOCALE",
       "text": "Mathieu Dacheux",
@@ -1793,15 +5376,7 @@
     },
     "reactionTypeCounts": [
       {
-        "count": 456,
-        "reactionType": "LIKE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 43,
+        "count": 32,
         "reactionType": "ENTERTAINMENT",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -1809,31 +5384,15 @@
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       },
       {
-        "count": 7,
-        "reactionType": "EMPATHY",
+        "count": 25,
+        "reactionType": "LIKE",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
         ],
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       },
       {
-        "count": 7,
-        "reactionType": "INTEREST",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 4,
-        "reactionType": "PRAISE",
-        "$recipeTypes": [
-          "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
-        ],
-        "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
-      },
-      {
-        "count": 2,
+        "count": 1,
         "reactionType": "APPRECIATION",
         "$recipeTypes": [
           "com.linkedin.d4e0cee175a2efb915edb354c2d505ca"
@@ -1841,10 +5400,10 @@
         "$type": "com.linkedin.voyager.dash.feed.social.ReactionTypeCount"
       }
     ],
-    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7371113588356222977",
-    "numShares": 9,
+    "entityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7349381286903402496",
+    "numShares": 0,
     "numImpressions": null,
     "reacted": null,
-    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7371113588356222977"
+    "preDashEntityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7349381286903402496"
   }
 ]
