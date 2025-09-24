@@ -1,0 +1,334 @@
+#!/usr/bin/env python3
+"""Fetch LinkedIn profile updates and extract authored social counts.
+
+This script mirrors the GraphQL request performed by the LinkedIn feed to fetch
+profile updates, handling pagination until no `paginationToken` remains. The raw
+`included` items are saved to `org-reactions.json`, and a condensed
+`posts.json` is generated containing the likes/comments/shares for posts authored
+by the specified profile.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+from typing import Any, Dict, Iterable, List, Optional, Sequence
+
+import requests
+
+from fetch_linkedin_profile_updates import (
+    DEFAULT_COOKIE,
+    DEFAULT_CSRF_TOKEN,
+    build_session,
+    extract_pagination_token,
+    fetch_profile_updates,
+    get_updates_section,
+)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Fetch LinkedIn profile updates via GraphQL and summarize social counts",
+    )
+    parser.add_argument(
+        "profile_urn",
+        help="Profile URN, e.g. 'urn:li:fsd_profile:ACoAAByAzQoB9-VHcgJ_Fx6moaCchiwhtPfz7rw'",
+    )
+    parser.add_argument(
+        "--count",
+        type=int,
+        default=20,
+        help="Page size for each request (default: 20, max 100)",
+    )
+    parser.add_argument(
+        "--start",
+        type=int,
+        default=0,
+        help="Initial offset (default: 0)",
+    )
+    parser.add_argument(
+        "--timeout",
+        type=float,
+        default=30.0,
+        help="HTTP timeout in seconds (default: 30)",
+    )
+    parser.add_argument(
+        "--cookie",
+        help="Cookie header string. Defaults to LINKEDIN_COOKIE env var or module default.",
+    )
+    parser.add_argument(
+        "--csrf-token",
+        dest="csrf_token",
+        help="CSRF token value. Defaults to LINKEDIN_CSRF_TOKEN env var or module default.",
+    )
+    parser.add_argument(
+        "--referer",
+        help="Optional referer header. Defaults to https://www.linkedin.com/feed/",
+    )
+    parser.add_argument(
+        "--extra-header",
+        action="append",
+        default=[],
+        metavar="KEY=VALUE",
+        help="Extra request header(s) to include; can be repeated.",
+    )
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        help="Fetch at most this many pages (optional safeguard).",
+    )
+    parser.add_argument(
+        "--output",
+        default="org-reactions.json",
+        help="Path to write the aggregated included payload (default: org-reactions.json)",
+    )
+    parser.add_argument(
+        "--posts-output",
+        default="posts.json",
+        help="Path to write the condensed social counts (default: posts.json)",
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Print pagination progress to stderr.",
+    )
+    return parser.parse_args()
+
+
+def normalize_urn(value: Any) -> Optional[str]:
+    if not isinstance(value, str):
+        return None
+    prefixes = (
+        "urn:li:fsd_socialActivityCounts:",
+        "urn:li:fs_socialActivityCounts:",
+    )
+    for prefix in prefixes:
+        if value.startswith(prefix):
+            candidate = value.split(":", 3)[-1]
+            return candidate if candidate.startswith("urn:li:") else value
+    if value.startswith("urn:li:fsd_update:("):
+        inner = value.split("(", 1)[-1].split(",", 1)[0]
+        if inner.startswith("urn:li:"):
+            return inner
+    return value
+
+
+def dedupe_items(items: Iterable[Any]) -> List[Any]:
+    seen: set[tuple[str, str]] = set()
+    result: List[Any] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        key: Optional[tuple[str, str]] = None
+        for candidate in ("$id", "entityUrn", "urn"):
+            value = item.get(candidate)
+            if isinstance(value, str):
+                key = (candidate, value)
+                break
+        if key is None:
+            key = ("index", str(len(result)))
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(item)
+    return result
+
+
+def collect_included(
+    session: requests.Session,
+    profile_urn: str,
+    start: int,
+    count: int,
+    timeout: float,
+    max_pages: Optional[int],
+    verbose: bool,
+) -> List[Any]:
+    collected: List[Any] = []
+    pagination_token: Optional[str] = None
+    seen_tokens: set[str] = set()
+    cursor = start
+    pages = 0
+
+    while True:
+        payload = fetch_profile_updates(
+            session=session,
+            profile_urn=profile_urn,
+            start=cursor,
+            count=count,
+            timeout=timeout,
+            pagination_token=pagination_token,
+        )
+        pages += 1
+        included = payload.get("included", [])
+        if isinstance(included, list):
+            collected.extend(included)
+
+        if verbose:
+            total = len(collected)
+            print(
+                f"Fetched page {pages} start={cursor} count={count} -> accumulated entries={total}",
+                file=sys.stderr,
+            )
+
+        if max_pages and pages >= max_pages:
+            break
+
+        next_token = extract_pagination_token(payload)
+        section = get_updates_section(payload)
+        items = section.get("items", []) if isinstance(section, dict) else []
+        if len(items) < count and not next_token:
+            break
+        if not next_token or next_token in seen_tokens:
+            break
+        seen_tokens.add(next_token)
+        pagination_token = next_token
+        cursor += count
+
+    return dedupe_items(collected)
+
+
+def extract_profile_id(profile_urn: str) -> Optional[str]:
+    if not isinstance(profile_urn, str):
+        return None
+    parts = profile_urn.rsplit(":", 1)
+    if parts:
+        return parts[-1]
+    return None
+
+
+def _contains_profile(obj: Any, profile_id: str) -> bool:
+    if isinstance(obj, str):
+        return profile_id in obj
+    if isinstance(obj, dict):
+        return any(_contains_profile(value, profile_id) for value in obj.values())
+    if isinstance(obj, list):
+        return any(_contains_profile(value, profile_id) for value in obj)
+    return False
+
+
+def derive_posts(included: Sequence[Any], profile_id: Optional[str]) -> List[Dict[str, Any]]:
+    share_urls_by_urn: Dict[str, Optional[str]] = {}
+
+    for item in included:
+        if not isinstance(item, dict):
+            continue
+        if item.get("$type") != "com.linkedin.voyager.dash.feed.Update":
+            continue
+        metadata = item.get("metadata")
+        backend = metadata.get("backendUrn") if isinstance(metadata, dict) else None
+        backend = normalize_urn(backend)
+        if not backend:
+            continue
+        social = item.get("socialContent")
+        share_url = social.get("shareUrl") if isinstance(social, dict) else None
+        share_urls_by_urn[backend] = share_url
+
+    authored_urns = {
+        urn
+        for urn, share_url in share_urls_by_urn.items()
+        if profile_id and isinstance(share_url, str) and profile_id in share_url
+    }
+
+    owned_urns: set[str] = set()
+    if profile_id:
+        for item in included:
+            if not isinstance(item, dict):
+                continue
+            if item.get("$type") != "com.linkedin.voyager.dash.feed.Update":
+                continue
+            actor = item.get("actor")
+            if not _contains_profile(actor, profile_id):
+                continue
+            meta = item.get("metadata")
+            backend = meta.get("backendUrn") if isinstance(meta, dict) else None
+            urns = [
+                normalize_urn(backend),
+                normalize_urn(item.get("entityUrn")),
+                normalize_urn(item.get("preDashEntityUrn")),
+            ]
+            for urn in urns:
+                if urn:
+                    owned_urns.add(urn)
+
+    counts: List[Dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in included:
+        if not isinstance(item, dict):
+            continue
+        if item.get("$type") != "com.linkedin.voyager.dash.feed.SocialActivityCounts":
+            continue
+        urn = normalize_urn(item.get("urn")) or normalize_urn(item.get("entityUrn"))
+        if not urn or urn in seen:
+            continue
+        counts.append(
+            {
+                "urn": urn,
+                "numLikes": int(item.get("numLikes") or 0),
+                "numComments": int(item.get("numComments") or 0),
+                "numShares": int(item.get("numShares") or 0),
+            }
+        )
+        seen.add(urn)
+
+    desired = {normalize_urn(urn) or urn for urn in authored_urns}
+    desired.update(owned_urns)
+
+    if desired:
+        return [entry for entry in counts if entry["urn"] in desired]
+    return []
+
+
+def main() -> None:
+    args = parse_args()
+
+    if args.count <= 0:
+        raise SystemExit("--count must be positive")
+    if args.count > 100:
+        raise SystemExit("--count cannot exceed 100")
+
+    cookie_header = args.cookie or os.getenv("LINKEDIN_COOKIE") or DEFAULT_COOKIE
+    csrf_token = args.csrf_token or os.getenv("LINKEDIN_CSRF_TOKEN") or DEFAULT_CSRF_TOKEN
+
+    session = build_session(
+        cookie_header=cookie_header,
+        csrf_token=csrf_token,
+        referer=args.referer,
+        extra_headers=args.extra_header,
+    )
+
+    try:
+        included = collect_included(
+            session=session,
+            profile_urn=args.profile_urn,
+            start=args.start,
+            count=args.count,
+            timeout=args.timeout,
+            max_pages=args.max_pages,
+            verbose=args.verbose,
+        )
+    except requests.HTTPError as exc:
+        raise SystemExit(f"LinkedIn request failed: {exc}") from exc
+
+    # Persist the raw included payload.
+    with open(args.output, "w", encoding="utf-8") as handle:
+        json.dump({"included": included}, handle, indent=2)
+        handle.write("\n")
+
+    profile_id = extract_profile_id(args.profile_urn)
+    posts = derive_posts(included, profile_id)
+
+    with open(args.posts_output, "w", encoding="utf-8") as handle:
+        json.dump(posts, handle, indent=2)
+        handle.write("\n")
+
+    if args.verbose:
+        print(
+            f"Wrote {len(included)} included entries to {args.output} and {len(posts)} posts to {args.posts_output}",
+            file=sys.stderr,
+        )
+
+
+if __name__ == "__main__":
+    main()

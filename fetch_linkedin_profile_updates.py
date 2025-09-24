@@ -24,7 +24,8 @@ import os
 import sys
 from collections.abc import Iterable
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import quote, urlencode
+import re
+from urllib.parse import quote, urlencode, unquote
 from urllib.parse import quote
 
 import requests
@@ -428,7 +429,11 @@ def collect_updates(payload: Dict[str, Any]) -> Tuple[List[str], Dict[str, Dict[
     return order, updates
 
 
-def harvest_social_counts(payload: Dict[str, Any], store: Dict[str, Dict[str, Any]]) -> None:
+def harvest_social_counts(
+    payload: Dict[str, Any],
+    store: Dict[str, Dict[str, Any]],
+    metadata: Optional[Dict[str, Dict[str, Any]]] = None,
+) -> None:
     for item in payload.get("included", []):
         if not isinstance(item, dict):
             continue
@@ -439,11 +444,17 @@ def harvest_social_counts(payload: Dict[str, Any], store: Dict[str, Dict[str, An
             continue
         record = dict(item)
         record.setdefault("entityUrn", urn)
+        if metadata:
+            meta = metadata.get(urn)
+            if not meta and urn.startswith("urn:li:fsd_socialActivityCounts:"):
+                meta = metadata.get(urn.split(":", 3)[-1])
+            if meta and "publishedAt" in meta:
+                record.setdefault("publishedAt", meta["publishedAt"])
         store[urn] = record
 
 
 def harvest_organization_reactions(
-    payload: Dict[str, Any], store: Dict[str, Dict[str, Any]]
+    payload: Dict[str, Any], store: Dict[str, Dict[str, Any]], metadata: Dict[str, Dict[str, Any]]
 ) -> None:
     for item in payload.get("included", []):
         if not isinstance(item, dict):
@@ -453,8 +464,72 @@ def harvest_organization_reactions(
         key = item.get("entityUrn") or item.get("urn") or item.get("$id")
         if not isinstance(key, str):
             key = json.dumps(item, sort_keys=True)
-        if key not in store:
-            store[key] = dict(item)
+        if key in store:
+            continue
+        record = dict(item)
+        entity_urn = record.get("entityUrn") or record.get("urn")
+        if isinstance(entity_urn, str):
+            meta = metadata.get(entity_urn)
+            if not meta and entity_urn.startswith("urn:li:fsd_socialActivityCounts:"):
+                # Match on the underlying activity urn as well.
+                meta = metadata.get(entity_urn.split(":", 3)[-1])
+            if meta:
+                if "publishedAt" in meta:
+                    record.setdefault("publishedAt", meta["publishedAt"])
+        store[key] = record
+
+
+def _collect_social_metadata(
+    obj: Any,
+    mapping: Dict[str, Dict[str, Any]],
+    inherited_published: Optional[int],
+) -> None:
+    if isinstance(obj, dict):
+        published = obj.get("publishedAt")
+        if isinstance(published, str) and published.isdigit():
+            published = int(published)
+        if isinstance(published, float):
+            published = int(published)
+        if not isinstance(published, int):
+            published = inherited_published
+        related_urns: List[str] = []
+        for key, value in obj.items():
+            base_key = key[1:] if key.startswith("*") else key
+            if base_key in {
+                "socialActivityCounts",
+                "socialActivityCountsUrn",
+                "dashSocialActivityCountsUrn",
+            } and isinstance(value, str):
+                related_urns.append(value)
+            if key in {"entityUrn", "urn"} and isinstance(value, str):
+                related_urns.append(value)
+        for urn in related_urns:
+            entry = mapping.setdefault(urn, {})
+            if isinstance(published, int) and "publishedAt" not in entry:
+                entry["publishedAt"] = published
+            if urn.startswith("urn:li:fsd_socialActivityCounts:"):
+                inner = urn.split(":", 3)[-1]
+                inner_entry = mapping.setdefault(inner, {})
+                if isinstance(published, int) and "publishedAt" not in inner_entry:
+                    inner_entry["publishedAt"] = published
+        for value in obj.values():
+            if isinstance(value, (dict, list)):
+                _collect_social_metadata(value, mapping, published)
+    elif isinstance(obj, list):
+        for item in obj:
+            if isinstance(item, (dict, list)):
+                _collect_social_metadata(item, mapping, inherited_published)
+
+
+def collect_social_metadata(payload: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    metadata: Dict[str, Dict[str, Any]] = {}
+    for item in payload.get("included", []):
+        if isinstance(item, (dict, list)):
+            _collect_social_metadata(item, metadata, None)
+    data_section = payload.get("data")
+    if isinstance(data_section, (dict, list)):
+        _collect_social_metadata(data_section, metadata, None)
+    return metadata
 
 
 def extract_pagination_token(payload: Dict[str, Any]) -> Optional[str]:
@@ -537,11 +612,14 @@ def fetch_all_updates(
     include_raw: bool,
     social_counts_only: bool,
     organization_reactions_only: bool,
+    target_profile_id: Optional[str],
 ) -> List[Dict[str, Any]]:
     collected: List[Dict[str, Any]] = []
     seen: set[str] = set()
     social_counts: Dict[str, Dict[str, Any]] = {}
     org_reactions: Dict[str, Dict[str, Any]] = {}
+    owned_posts: set[str] = set()
+    social_metadata: Dict[str, Dict[str, Any]] = {}
     cursor = start
     pagination_token: Optional[str] = None
     seen_tokens: set[str] = set()
@@ -555,8 +633,41 @@ def fetch_all_updates(
             timeout,
             pagination_token,
         )
+        page_metadata = collect_social_metadata(payload)
+        for key, value in page_metadata.items():
+            if key in social_metadata:
+                existing = social_metadata[key]
+                if "publishedAt" not in existing and "publishedAt" in value:
+                    existing["publishedAt"] = value["publishedAt"]
+            else:
+                social_metadata[key] = dict(value)
+
+        if target_profile_id:
+            owned_before = len(owned_posts)
+            owned_posts.update(collect_owned_posts(payload, target_profile_id))
+            if verbose and len(owned_posts) != owned_before:
+                print(
+                    f"Identified owned posts={len(owned_posts)}",
+                    file=sys.stderr,
+                )
+
+        def apply_metadata(record: Dict[str, Any]) -> None:
+            ent = record.get("entityUrn") or record.get("urn")
+            if not isinstance(ent, str):
+                return
+            meta = social_metadata.get(ent)
+            if not meta and ent.startswith("urn:li:fsd_socialActivityCounts:"):
+                meta = social_metadata.get(ent.split(":", 3)[-1])
+            if meta and "publishedAt" in meta and "publishedAt" not in record:
+                record["publishedAt"] = meta["publishedAt"]
+
+        for existing in social_counts.values():
+            apply_metadata(existing)
+        for existing in org_reactions.values():
+            apply_metadata(existing)
+
         if social_counts_only:
-            harvest_social_counts(payload, social_counts)
+            harvest_social_counts(payload, social_counts, social_metadata)
             new_in_page = 0
             item_count = len(social_counts)
             if verbose:
@@ -565,7 +676,7 @@ def fetch_all_updates(
                     file=sys.stderr,
                 )
         elif organization_reactions_only:
-            harvest_organization_reactions(payload, org_reactions)
+            harvest_organization_reactions(payload, org_reactions, social_metadata)
             new_in_page = 0
             item_count = len(org_reactions)
             if verbose:
@@ -575,7 +686,7 @@ def fetch_all_updates(
                 )
         else:
             index = index_included(payload)
-            harvest_social_counts(payload, social_counts)
+            harvest_social_counts(payload, social_counts, social_metadata)
             order, updates = collect_updates(payload)
 
             new_in_page = 0
@@ -620,12 +731,34 @@ def fetch_all_updates(
         cursor += count
 
     if social_counts_only:
-        results = list(social_counts.values())
+        results = [
+            item
+            for item in social_counts.values()
+            if _is_supported_social_entry(item)
+            and _entry_matches_owned(item, owned_posts)
+        ]
         if limit:
             return results[:limit]
         return results
     if organization_reactions_only:
-        results = list(org_reactions.values())
+        results = [
+            item
+            for item in org_reactions.values()
+            if _is_supported_social_entry(item)
+            and _entry_matches_owned(item, owned_posts)
+        ]
+        if verbose:
+            print(
+                f"Authored organization reactions collected={len(results)}",
+                file=sys.stderr,
+            )
+        if not results and org_reactions:
+            if verbose:
+                print(
+                    "No owned organization reactions detected; falling back to entire set",
+                    file=sys.stderr,
+                )
+            results = list(org_reactions.values())
         if limit:
             return results[:limit]
         return results
@@ -633,6 +766,103 @@ def fetch_all_updates(
     if limit:
         return collected[:limit]
     return collected
+
+
+def _is_supported_social_entry(entry: Dict[str, Any]) -> bool:
+    """Accept both activity and UGC URNs for authored content."""
+
+    def matches(value: Any) -> bool:
+        if not isinstance(value, str):
+            return False
+        return "urn:li:ugcPost" in value or "urn:li:activity" in value
+
+    return matches(entry.get("entityUrn")) or matches(entry.get("urn"))
+
+
+def _entry_matches_owned(entry: Dict[str, Any], owned: set[str]) -> bool:
+    if not owned:
+        return True
+    for candidate in _candidate_urns(entry):
+        if candidate in owned:
+            return True
+    return False
+
+
+def _candidate_urns(entry: Dict[str, Any]) -> set[str]:
+    candidates: set[str] = set()
+    for key in ("entityUrn", "urn", "preDashEntityUrn", "dashEntityUrn"):
+        value = entry.get(key)
+        if isinstance(value, str):
+            candidates.add(value)
+            if value.startswith("urn:li:fsd_socialActivityCounts:") or value.startswith(
+                "urn:li:fs_socialActivityCounts:"
+            ):
+                suffix = value.split(":", 3)[-1]
+                if suffix.startswith("urn:li:"):
+                    candidates.add(suffix)
+    return candidates
+
+
+URN_PATTERN = re.compile(r"urn:li:[a-zA-Z0-9_.:-]+")
+ACTIVITY_PATTERN = re.compile(r"activity[-:]?(\d{6,})", re.IGNORECASE)
+UGC_PATTERN = re.compile(r"ugcPost[-:]?(\d{6,})", re.IGNORECASE)
+
+
+def collect_owned_posts(payload: Dict[str, Any], profile_id: str) -> set[str]:
+    owned: set[str] = set()
+
+    def traverse(obj: Any) -> None:
+        if isinstance(obj, dict):
+            matches = any(
+                isinstance(value, str) and profile_id in value for value in obj.values()
+            )
+            for value in obj.values():
+                if isinstance(value, (dict, list)):
+                    traverse(value)
+            if matches:
+                owned.update(_extract_urns(obj))
+        elif isinstance(obj, list):
+            for item in obj:
+                if isinstance(item, (dict, list)):
+                    traverse(item)
+
+    for section in (payload.get("included"), payload.get("data")):
+        if isinstance(section, (dict, list)):
+            traverse(section)
+
+    return owned
+
+
+def _extract_urns(obj: Any) -> set[str]:
+    urns: set[str] = set()
+
+    def collect(value: Any) -> None:
+        if isinstance(value, str):
+            decoded = unquote(value)
+            for match in URN_PATTERN.findall(decoded):
+                urns.add(match)
+            for match in ACTIVITY_PATTERN.findall(decoded):
+                urns.add(f"urn:li:activity:{match}")
+            for match in UGC_PATTERN.findall(decoded):
+                urns.add(f"urn:li:ugcPost:{match}")
+        elif isinstance(value, dict):
+            for item in value.values():
+                collect(item)
+        elif isinstance(value, list):
+            for item in value:
+                collect(item)
+
+    collect(obj)
+    return urns
+
+
+def _extract_profile_id(profile_urn: str) -> Optional[str]:
+    if not isinstance(profile_urn, str):
+        return None
+    parts = profile_urn.rsplit(":", 1)
+    if parts:
+        return parts[-1]
+    return None
 
 
 def main() -> None:
@@ -665,6 +895,7 @@ def main() -> None:
     args.count = count_value
 
     session = build_session(cookie_header, csrf_token, args.referer, args.header)
+    target_profile_id = _extract_profile_id(args.profile_urn)
     updates = fetch_all_updates(
         session=session,
         profile_urn=args.profile_urn,
@@ -676,6 +907,7 @@ def main() -> None:
         include_raw=args.include_raw,
         social_counts_only=args.social_counts_only,
         organization_reactions_only=args.organization_reactions_only,
+        target_profile_id=target_profile_id,
     )
 
     if args.output:

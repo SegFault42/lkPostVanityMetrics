@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+curl 'https://www.linkedin.com/voyager/api/graphql?includeWebMetadata=true&variables=(count:20,start:0,profileUrn:urn%3Ali%3Afsd_profile%3AACoAAByAzQoB9-VHcgJ_Fx6moaCchiwhtPfz7rw)&queryId=voyagerFeedDashProfileUpdates.80d5abb3cd25edff72c093a5db696079' \
+  -H 'accept: application/vnd.linkedin.normalized+json+2.1' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -b 'bcookie="v=2&e0cf3803-7bb9-4954-8e5f-7e411b64be33"; bscookie="v=1&20250626151046ec2cc56f-0821-4637-8d49-6e310fe793bfAQH1wI8PP6SvN3l_UX9YE_lVoxTs9Nsu"; li_alerts=e30=; dfpfpt=9919545248db41b4b98acb3a5b699ada; li_gc=MTsyMTsxNzUwOTUwNjg0OzI7MDIxtrd/pxnD1p85yDE8anfAKulj3YK/0HlntiYqZ129NfU=; AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg=1; li_rm=AQFlvhIEKCTnSQAAAZesy0RRcl_ed3VwdV0H2VRvnmPwOZDB4HiOsmRoGX5I0QkxmJ_7sg_QJ4ZjO5A1vUYXzvCiShRgKK1bAuKS4OfkZxsoM1Y319UfKyNP; JSESSIONID="ajax:2297667261833857836"; li_theme=light; li_theme_set=app; li_sugr=31b55aa4-02e0-4b41-b0be-a3c33ccb23bb; AMCV_14215E3D5995C57C0A495C55%40AdobeOrg=-637568504%7CMCIDTS%7C20266%7CMCMID%7C90600092206578217323891866829768863532%7CMCAAMLH-1751640763%7C6%7CMCAAMB-1751640763%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1751043163s%7CNONE%7CvVersion%7C5.1.1%7CMCCIDH%7C1233672132; bitmovin_analytics_uuid=6ceb256e-2908-4e51-82a1-dd1a30912049; lil-lang=fr_FR; PLAY_LANG=fr; liap=true; li_theme_set=app; timezone=Europe/Moscow; sdui_ver=sdui-flagship:0.1.14359+sdui-flagship.production; g_state={"i_p":1758960776849,"i_l":3,"i_t":1754012820008}; li_at=AQEDARyAzQoFc4B0AAABmWYvAlgAAAGZijuGWE4AaVTHt70swWgMmDwk5BEkAxOr89bwCSpJ6vc2fmKetp-Ux5OXjvZwjS_B-_9mIRc9PZjFzzOPHtaxNG3XjTCPXAgiSoBNHTCydOVFWtobGBxbUfv3; PLAY_SESSION=eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7InNlc3Npb25faWQiOiI2YWZjNTI5ZS1lZWI5LTQ4ZTgtOWNhMS0yODUxNjMzMDZlODN8MTc1ODM1NjAxMiIsImFsbG93bGlzdCI6Int9IiwicmVjZW50bHktc2VhcmNoZWQiOiIiLCJyZWZlcnJhbC11cmwiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaGVscC9saW5rZWRpbi9hbnN3ZXIvYTU2MzI1OT9sYW5nPWZyLUZSIiwicmVjZW50bHktdmlld2VkIjoiIiwiQ1BULWlkIjoiw4JUw4VEwrg8w67Dii1cdTAwMDBFXHUwMDA1wrbDqMO1w7IiLCJleHBlcmllbmNlIjoiIiwidHJrIjoiIn0sIm5iZiI6MTc1ODM1NjAxMiwiaWF0IjoxNzU4MzU2MDEyfQ.pjcbiX87bgiWjymLsLcicM5Gmbb5fyhoY4IHUKk2wP8; lang=v=2&lang=fr-fr; UserMatchHistory=AQLsHBPt8O9hbQAAAZlsfb0tYxIeYGEYP_G1VLEAurFSLG95MHdLBM0hKtoN52UDGW0cw9w5TsjcxrnaiRrvtxvdW7zN5WcjIcCdUzqIOHSQ_7c_jq7tjhQOYNEDrbZcJFP9haqAs96Adr9XviR3EGys78yfXHvYRKyA31VbeMRrrAEr3Hh1YYHPNi3ks_2CabP4zZgVEFC3i4vTjedneoJa4dLSvAAm2mVRX4oIcssBHR-InbStTOqqM8DtyN_hm3Pbs557EzyRFFAeAl4cR6KLPW6huX8xH_4uE4lrToJ7S1zFI3mpW2WpERPHuqwaKyPkGWf1oOG5VyN4F6tJPtBvH0LG_7l-PHu5sYJJRFjh7b7lcA; fptctx2=taBcrIH61PuCVH7eNCyH0LNKRXFdWqLJ6b8ywJyet7Utrm78EZqfKASXPg8BJyalPMkysvlM4hV7X%252feRzNrMQn0HsBXA%252bpacbYxE6xyXuW%252f0oh3QBIIYO%252bEGg5NTd%252fu5Wj2J%252fXkO3TeSm0al%252bHKMMYlBWcjtoFUklLCjlT2L64iF89ricwFE84uh2xv51no3uOHFGomWR1GLeg89r%252bH2lugrAu55gdpzXrzZi8qfPu%252bYqvNOa5zf%252bAPIzAP%252fagx92PH1zshOXpYPtscSPHYRKN%252fArYTlvLpyLZjCwqmS1B0vjiYZ2yamdRJiMs3ammY%252f0DVLdtdinyK5zjkhBguqtv%252fnImIdvIS8e7HNT3pvmRY%253d; lidc="b=TB46:s=T:r=T:a=T:p=T:g=882:u=2001:x=1:i=1758721155:t=1758806264:v=2:sig=AQFgFldRBW0yXnvMuiEHfJ3KguoSWM7Y"; __cf_bm=TykRL.i214x9bHLCHrOQZvvskgG4jI4kBMAhmcGYnKc-1758745765-1.0.1.1-1vX6hefwEG8RikqOsIakW.XIaxNquGwWS4arRUYNTjXji0lMy62jxwITiQOrTHYGmWKd89d77gEqzHmscCwXEZwS6CQfnFmnkV4cvtgJG0A; li_mc=MTsyMTsxNzU4NzQ2MTI1OzI7MDIxwq4xfKwScvI9xkZgKzqETHN8kEcMM6CUrvFq5j0aJhU=' \
+  -H 'csrf-token: ajax:2297667261833857836' \
+  -H 'dnt: 1' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.linkedin.com/in/ramzib/recent-activity/all/' \
+  -H 'sec-ch-prefers-color-scheme: dark' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="24", "Chromium";v="140"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' \
+  -H 'x-li-lang: fr_FR' \
+  -H 'x-li-page-instance: urn:li:page:d_flagship3_profile_view_base_recent_activity_content_view;k4j81eawTy6t85I6iPePNA==' \
+  -H 'x-li-track: {"clientVersion":"1.13.39320","mpVersion":"1.13.39320","osName":"web","timezoneOffset":3,"timezone":"Europe/Moscow","deviceFormFactor":"DESKTOP","mpName":"voyager-web","displayDensity":1.7999999523162842,"displayWidth":3455.9999084472656,"displayHeight":2237.3999407291412}' \
+  -H 'x-restli-protocol-version: 2.0.0' \
+  --compressed \
+  -o org-reactions.json
+
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+profile_id = 'ACoAAByAzQoB9-VHcgJ_Fx6moaCchiwhtPfz7rw'
+
+
+def normalize_urn(value: object) -> str | None:
+    if not isinstance(value, str):
+        return None
+    prefixes = (
+        "urn:li:fsd_socialActivityCounts:",
+        "urn:li:fs_socialActivityCounts:",
+    )
+    for prefix in prefixes:
+        if value.startswith(prefix):
+            candidate = value.split(":", 3)[-1]
+            return candidate if candidate.startswith("urn:li:") else value
+    if value.startswith("urn:li:fsd_update:("):
+        inner = value.split("(", 1)[-1].split(",", 1)[0]
+        if inner.startswith("urn:li:"):
+            return inner
+    return value
+
+
+with open("org-reactions.json", encoding="utf-8") as src:
+    payload = json.load(src)
+
+included = []
+if isinstance(payload, dict):
+    included = payload.get("included", [])
+elif isinstance(payload, list):
+    included = payload
+
+if not isinstance(included, list):
+    included = []
+
+share_urls_by_urn = {}
+
+for item in included:
+    if not isinstance(item, dict):
+        continue
+    if item.get("$type") != "com.linkedin.voyager.dash.feed.Update":
+        continue
+    metadata = item.get("metadata")
+    backend = metadata.get("backendUrn") if isinstance(metadata, dict) else None
+    backend = normalize_urn(backend)
+    if not backend:
+        continue
+    social = item.get("socialContent")
+    share_url = social.get("shareUrl") if isinstance(social, dict) else None
+    share_urls_by_urn[backend] = share_url
+
+authored_urns = {
+    urn
+    for urn, share_url in share_urls_by_urn.items()
+    if isinstance(share_url, str) and profile_id in share_url
+}
+
+counts = []
+seen = set()
+
+for item in included:
+    if not isinstance(item, dict):
+        continue
+    if item.get("$type") != "com.linkedin.voyager.dash.feed.SocialActivityCounts":
+        continue
+    urn = normalize_urn(item.get("urn")) or normalize_urn(item.get("entityUrn"))
+    if not urn or urn in seen:
+        continue
+    counts.append(
+        {
+            "urn": urn,
+            "numLikes": int(item.get("numLikes") or 0),
+            "numComments": int(item.get("numComments") or 0),
+            "numShares": int(item.get("numShares") or 0),
+        }
+    )
+    seen.add(urn)
+
+filtered = [entry for entry in counts if not authored_urns or entry["urn"] in authored_urns]
+
+if not filtered and counts:
+    filtered = counts
+
+with open("posts.json", "w", encoding="utf-8") as dest:
+    json.dump(filtered, dest, indent=2)
+    dest.write("\n")
+PY
