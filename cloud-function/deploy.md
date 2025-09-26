@@ -20,3 +20,12 @@ gcloud secrets versions add linkedin-csrf --data-file=csrf.txt
   --trigger-http \
   --allow-unauthenticated \
   --set-secrets=LINKEDIN_COOKIE=linkedin-cookie:latest,LINKEDIN_CSRF_TOKEN=linkedin-csrf:latest 
+
+
+  shared secret '2dc802a2e0d059a5e8aa8c6bf0037fbcef21c3312cd0c4109c0ca20dc2cf6eaf'curl -X 
+  
+  refresh creators: 
+  POST \
+  -H "Content-Type: application/json" \
+  -H "X-Refresh-Key: 2dc802a2e0d059a5e8aa8c6bf0037fbcef21c3312cd0c4109c0ca20dc2cf6eaf" \
+  https://us-central1-linkedincreatorleaderboard.cloudfunctions.net/refreshCreators
