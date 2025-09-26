@@ -74,11 +74,14 @@ function extractSnowflakeTimestamp(urn) {
   if (!/^(\d+)$/.test(candidate)) {
     return null;
   }
-  const snowflake = Number(candidate);
-  if (!Number.isFinite(snowflake)) {
+  try {
+    const snowflake = BigInt(candidate);
+    const shifted = snowflake >> 22n;
+    const asNumber = Number(shifted);
+    return Number.isFinite(asNumber) ? asNumber : null;
+  } catch (err) {
     return null;
   }
-  return snowflake >> 22;
 }
 
 function dedupeItems(items) {
@@ -243,7 +246,10 @@ async function collectIncluded({
     const nextToken = extractPaginationToken(payload);
     const section = getUpdatesSection(payload);
     const items = Array.isArray(section.items) ? section.items : [];
-    if (!nextToken || seenTokens.has(nextToken) || items.length < count) {
+    if (items.length < count && !nextToken) {
+      break;
+    }
+    if (!nextToken || seenTokens.has(nextToken)) {
       break;
     }
     seenTokens.add(nextToken);
