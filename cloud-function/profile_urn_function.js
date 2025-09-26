@@ -44,6 +44,11 @@ const URN_PATTERN_FLAGS = 'gi';
 const ROOT_URL_PATTERN = /"rootUrl"\s*:\s*"(?<root>https:\/\/media\.licdn\.com\/dms\/image[^"\\]+)"/i;
 const ARTIFACT_SEGMENT_PATTERN_SOURCE = '"fileIdentifyingUrlPathSegment"\\s*:\\s*"(?<segment>[^"\\\\]+)"';
 const ARTIFACT_SEGMENT_PATTERN_FLAGS = 'gi';
+const PRESENCE_IMAGE_PATTERN = /<img\b[^>]*class=["'][^"']*presence-entity__image[^"']*["'][^>]*>/gi;
+const INLINE_PROFILE_IMG_PATTERN = /<img\b[^>]*src=["'][^"']*profile-displayphoto[^"']*["'][^>]*>/gi;
+const META_OG_IMAGE_PATTERN = /<meta\b[^>]*property=["']og:image["'][^>]*content=["'](?<url>[^"']+)["'][^>]*>/i;
+const META_OG_TITLE_PATTERN = /<meta\b[^>]*property=["']og:title["'][^>]*content=["'](?<title>[^"']+)["'][^>]*>/i;
+const DEFAULT_EXCLUDED_IMAGE_ROOT = 'https://media.licdn.com/dms/image/v2/D4D03AQEJqKg9s8pQ6g';
 
 /**
  * Decode minimal HTML entities without external dependencies.
@@ -69,6 +74,97 @@ function normalizeHtml(html) {
     .replace(/\\u002F/gi, '/')
     .replace(/\\u0026/gi, '&');
   return { plain, normalized };
+}
+
+function parseImgAttributes(tag) {
+  const attrs = {};
+  const attrPattern = /([\w:-]+)\s*=\s*("([^"]*)"|'([^']*)')/g;
+  let match;
+  while ((match = attrPattern.exec(tag)) !== null) {
+    const name = match[1].toLowerCase();
+    const value = match[3] !== undefined ? match[3] : match[4] || '';
+    attrs[name] = value;
+  }
+  return attrs;
+}
+
+function sanitizeMediaUrl(value) {
+  if (!value) return null;
+  let url = decodeHtmlEntities(value)
+    .replace(/\\u002F/gi, '/')
+    .replace(/\\u0026/gi, '&');
+  if (url.startsWith('//')) {
+    url = `https:${url}`;
+  }
+  return url;
+}
+
+function extractOgImageUrl(text) {
+  if (!text) return null;
+  const match = META_OG_IMAGE_PATTERN.exec(text);
+  if (match && match.groups?.url) {
+    const url = sanitizeMediaUrl(match.groups.url);
+    if (url && url.startsWith('https://media.licdn.com/dms/image')) {
+      return url;
+    }
+  }
+  return null;
+}
+
+function extractOgTitle(text) {
+  if (!text) return null;
+  const match = META_OG_TITLE_PATTERN.exec(text);
+  if (match && match.groups?.title) {
+    return match.groups.title;
+  }
+  return null;
+}
+
+function extractPresenceImageUrl(text, expectedName) {
+  if (!text) return null;
+  const normalizedExpected = expectedName ? expectedName.toLowerCase() : null;
+  let match;
+  while ((match = PRESENCE_IMAGE_PATTERN.exec(text)) !== null) {
+    const tag = match[0];
+    const attrs = parseImgAttributes(tag);
+    const candidate = attrs.src || attrs['data-delayed-url'] || attrs['data-delayload'] || attrs['data-delayed-src'] || attrs['data-src'] || attrs['data-lazy-src'];
+    const url = sanitizeMediaUrl(candidate);
+    if (!url || !url.startsWith('https://media.licdn.com/dms/image/v2')) {
+      continue;
+    }
+    if (normalizedExpected) {
+      const alt = (attrs.alt || '').toLowerCase();
+      if (alt && alt.includes(normalizedExpected)) {
+        return url;
+      }
+      continue;
+    }
+    return url;
+  }
+  return null;
+}
+
+function extractInlineProfileImageUrl(text, expectedName) {
+  if (!text) return null;
+  const normalizedExpected = expectedName ? expectedName.toLowerCase() : null;
+  let match;
+  while ((match = INLINE_PROFILE_IMG_PATTERN.exec(text)) !== null) {
+    const tag = match[0];
+    const attrs = parseImgAttributes(tag);
+    const src = sanitizeMediaUrl(attrs.src);
+    if (!src || !src.includes('profile-displayphoto')) {
+      continue;
+    }
+    if (normalizedExpected) {
+      const alt = (attrs.alt || attrs['aria-label'] || '').toLowerCase();
+      if (alt && alt.includes(normalizedExpected)) {
+        return src;
+      }
+      continue;
+    }
+    return src;
+  }
+  return null;
 }
 
 function orderedUnique(iterable) {
@@ -226,8 +322,12 @@ function sanitizeRoot(root) {
     .replace(/\\u0026/gi, '&');
 }
 
-function extractProfileImageUrl(html) {
+function extractProfileImageUrl(html, profileUrn) {
   const { plain, normalized } = normalizeHtml(html);
+  const profileId = typeof profileUrn === 'string' && profileUrn.includes(':')
+    ? profileUrn.split(':').pop()
+    : null;
+  const expectedName = extractOgTitle(plain) || extractOgTitle(normalized) || null;
 
   const attempt = (text) => {
     const candidates = [];
@@ -236,6 +336,9 @@ function extractProfileImageUrl(html) {
       const rootMatch = body.match(ROOT_URL_PATTERN);
       if (!rootMatch || !rootMatch.groups?.root) continue;
       const root = sanitizeRoot(rootMatch.groups.root);
+      if (root && root.startsWith(DEFAULT_EXCLUDED_IMAGE_ROOT)) {
+        continue;
+      }
       const segments = [];
       const artifactPattern = new RegExp(ARTIFACT_SEGMENT_PATTERN_SOURCE, ARTIFACT_SEGMENT_PATTERN_FLAGS);
       let match;
@@ -248,9 +351,21 @@ function extractProfileImageUrl(html) {
       const segment = chooseArtifactSegment(segments);
       if (!segment) continue;
       const cleanSegment = sanitizeSegment(segment);
-      candidates.push({ score: artifactSegmentScore(cleanSegment), url: root + cleanSegment });
+      if (cleanSegment && cleanSegment.startsWith('D4D03AQEJqKg9s8pQ6g')) {
+        continue;
+      }
+      const matchesProfile = Boolean(
+        (profileUrn && body.includes(profileUrn)) ||
+        (profileId && body.includes(profileId))
+      );
+      candidates.push({
+        match: matchesProfile ? 1 : 0,
+        score: artifactSegmentScore(cleanSegment),
+        url: root + cleanSegment,
+      });
     }
     candidates.sort((a, b) => {
+      if (b.match !== a.match) return b.match - a.match;
       if (b.score[0] !== a.score[0]) return b.score[0] - a.score[0];
       if (b.score[1] !== a.score[1]) return b.score[1] - a.score[1];
       return b.url.localeCompare(a.url);
@@ -258,7 +373,22 @@ function extractProfileImageUrl(html) {
     return candidates.length ? candidates[0].url : null;
   };
 
-  return attempt(normalized) || attempt(plain);
+  const ogImage = extractOgImageUrl(plain) || extractOgImageUrl(normalized);
+  if (ogImage && ogImage.includes('profile-displayphoto')) {
+    return ogImage;
+  }
+
+  const vectorImage = attempt(normalized) || attempt(plain);
+  if (vectorImage) {
+    return vectorImage;
+  }
+
+  const inlineImage = extractInlineProfileImageUrl(plain, expectedName) || extractInlineProfileImageUrl(normalized, expectedName);
+  if (inlineImage) {
+    return inlineImage;
+  }
+
+  return extractPresenceImageUrl(plain, expectedName) || extractPresenceImageUrl(normalized, expectedName);
 }
 
 async function fetchProfileHtml({ url, cookie, csrfToken, timeoutSeconds = 30 }) {
@@ -331,7 +461,8 @@ exports.profileUrnFetcher = async (req, res) => {
       return;
     }
 
-    const imageUrl = extractProfileImageUrl(html);
+    const profileUrnValue = profileUrn;
+    const imageUrl = extractProfileImageUrl(html, profileUrnValue);
     const username = vanity || inferVanityFromUrl(requestUrl);
     if (!username) {
       res.status(400).json({ error: 'Unable to infer username from the supplied URL.' });
