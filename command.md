@@ -14,3 +14,5 @@ all posts:
  final clean :
 
  /fetchv2 'urn:li:fsd_profile:ACoAABSRyhYBt8QgjkT6Jd9OfEDl6f6CKnjGLv8' --count 20 --verbose
+
+ export the cookies if 400

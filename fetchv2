@@ -14,7 +14,8 @@ import argparse
 import json
 import os
 import sys
-from typing import Any, Dict, Iterable, List, Optional, Sequence
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+from urllib.parse import quote, urlencode
 
 import requests
 
@@ -22,10 +23,40 @@ from fetch_linkedin_profile_updates import (
     DEFAULT_COOKIE,
     DEFAULT_CSRF_TOKEN,
     build_session,
+    GRAPHQL_URL,
+    QUERY_ID,
     extract_pagination_token,
-    fetch_profile_updates,
     get_updates_section,
 )
+
+BROWSER_HEADER_PRESET: List[Tuple[str, str]] = [
+    ("accept-language", "en-GB,en-US;q=0.9,en;q=0.8"),
+    ("priority", "u=1, i"),
+    ("sec-ch-prefers-color-scheme", "dark"),
+    (
+        "sec-ch-ua",
+        '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"',
+    ),
+    ("sec-ch-ua-mobile", "?0"),
+    ("sec-ch-ua-platform", '"macOS"'),
+    ("sec-fetch-dest", "empty"),
+    ("sec-fetch-mode", "cors"),
+    ("sec-fetch-site", "same-origin"),
+    (
+        "user-agent",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    ),
+    ("x-li-lang", "en_US"),
+    (
+        "x-li-page-instance",
+        "urn:li:page:d_flagship3_profile_view_base_recent_activity_content_view;pOmfvj00SMuwft9dt3dl1g==",
+    ),
+    (
+        "x-li-track",
+        '{"clientVersion":"1.13.39368","mpVersion":"1.13.39368","osName":"web","timezoneOffset":3,"timezone":"Europe/Moscow","deviceFormFactor":"DESKTOP","mpName":"voyager-web","displayDensity":2,"displayWidth":3840,"displayHeight":2486}',
+    ),
+    ("x-restli-protocol-version", "2.0.0"),
+]
 
 
 def parse_args() -> argparse.Namespace:
@@ -80,6 +111,18 @@ def parse_args() -> argparse.Namespace:
         help="Fetch at most this many pages (optional safeguard).",
     )
     parser.add_argument(
+        "--no-web-metadata",
+        action="store_true",
+        help="Omit includeWebMetadata=true from GraphQL requests.",
+    )
+    parser.add_argument(
+        "--browser-preset",
+        action="store_true",
+        help=(
+            "Apply the header set captured from the browser (sec-ch-ua, x-li-track, etc.)."
+        ),
+    )
+    parser.add_argument(
         "--output",
         default="org-reactions.json",
         help="Path to write the aggregated included payload (default: org-reactions.json)",
@@ -95,6 +138,30 @@ def parse_args() -> argparse.Namespace:
         help="Print pagination progress to stderr.",
     )
     return parser.parse_args()
+
+
+def build_profile_updates_url(
+    profile_urn: str,
+    start: int,
+    count: int,
+    pagination_token: Optional[str],
+    include_web_metadata: bool,
+) -> str:
+    params: Dict[str, str] = {"queryId": QUERY_ID}
+    if include_web_metadata:
+        params["includeWebMetadata"] = "true"
+    encoded_params = urlencode(params)
+    escaped_profile = profile_urn.replace(":", "%3A")
+    parts = [
+        f"count:{count}",
+        f"start:{start}",
+        f"profileUrn:{escaped_profile}",
+    ]
+    if pagination_token:
+        parts.append(f"paginationToken:{pagination_token}")
+    variables = f"({','.join(parts)})"
+    encoded_variables = quote(variables, safe="(),:%")
+    return f"{GRAPHQL_URL}?{encoded_params}&variables={encoded_variables}"
 
 
 def normalize_urn(value: Any) -> Optional[str]:
@@ -113,6 +180,19 @@ def normalize_urn(value: Any) -> Optional[str]:
         if inner.startswith("urn:li:"):
             return inner
     return value
+
+
+def extract_snowflake_timestamp(urn: Optional[str]) -> Optional[int]:
+    if not isinstance(urn, str):
+        return None
+    candidate = urn.rsplit(":", 1)[-1]
+    if not candidate.isdigit():
+        return None
+    try:
+        snowflake = int(candidate)
+    except ValueError:
+        return None
+    return snowflake >> 22
 
 
 def dedupe_items(items: Iterable[Any]) -> List[Any]:
@@ -144,6 +224,7 @@ def collect_included(
     timeout: float,
     max_pages: Optional[int],
     verbose: bool,
+    include_web_metadata: bool,
 ) -> List[Any]:
     collected: List[Any] = []
     pagination_token: Optional[str] = None
@@ -152,14 +233,42 @@ def collect_included(
     pages = 0
 
     while True:
-        payload = fetch_profile_updates(
-            session=session,
+        request_url = build_profile_updates_url(
             profile_urn=profile_urn,
             start=cursor,
             count=count,
-            timeout=timeout,
             pagination_token=pagination_token,
+            include_web_metadata=include_web_metadata,
         )
+        if verbose:
+            print(f"Request URL: {request_url}", file=sys.stderr)
+
+        response = session.get(request_url, timeout=timeout)
+        try:
+            response.raise_for_status()
+        except requests.HTTPError as exc:
+            status = getattr(exc.response, "status_code", None)
+            if pagination_token and status == 400:
+                body_preview = "<unavailable>"
+                if getattr(exc, "response", None) is not None:
+                    try:
+                        text = exc.response.text or ""
+                    except Exception:
+                        text = ""
+                    if text:
+                        body_preview = text[:500]
+                if verbose:
+                    print(
+                        "Reached pagination boundary (400 on pagination token); stopping",
+                        file=sys.stderr,
+                    )
+                    print(
+                        f"Response body preview: {body_preview}",
+                        file=sys.stderr,
+                    )
+                break
+            raise
+        payload = response.json()
         pages += 1
         included = payload.get("included", [])
         if isinstance(included, list):
@@ -178,6 +287,9 @@ def collect_included(
         next_token = extract_pagination_token(payload)
         section = get_updates_section(payload)
         items = section.get("items", []) if isinstance(section, dict) else []
+        if verbose:
+            token_display = next_token or "<none>"
+            print(f"Next pagination token: {token_display}", file=sys.stderr)
         if len(items) < count and not next_token:
             break
         if not next_token or next_token in seen_tokens:
@@ -268,6 +380,7 @@ def derive_posts(included: Sequence[Any], profile_id: Optional[str]) -> List[Dic
                 "numLikes": int(item.get("numLikes") or 0),
                 "numComments": int(item.get("numComments") or 0),
                 "numShares": int(item.get("numShares") or 0),
+                "publishedAt": extract_snowflake_timestamp(urn),
             }
         )
         seen.add(urn)
@@ -276,8 +389,10 @@ def derive_posts(included: Sequence[Any], profile_id: Optional[str]) -> List[Dic
     desired.update(owned_urns)
 
     if desired:
-        return [entry for entry in counts if entry["urn"] in desired]
-    return []
+        filtered = [entry for entry in counts if entry["urn"] in desired]
+        if filtered:
+            return filtered
+    return counts
 
 
 def main() -> None:
@@ -291,12 +406,25 @@ def main() -> None:
     cookie_header = args.cookie or os.getenv("LINKEDIN_COOKIE") or DEFAULT_COOKIE
     csrf_token = args.csrf_token or os.getenv("LINKEDIN_CSRF_TOKEN") or DEFAULT_CSRF_TOKEN
 
+    extra_headers: List[str] = list(args.extra_header)
+    referer = args.referer
+
+    if args.browser_preset:
+        preset_headers = [f"{key}={value}" for key, value in BROWSER_HEADER_PRESET]
+        extra_headers = preset_headers + extra_headers
+        if referer is None:
+            referer = "https://www.linkedin.com/in/ramzib/recent-activity/all/"
+
     session = build_session(
         cookie_header=cookie_header,
         csrf_token=csrf_token,
-        referer=args.referer,
-        extra_headers=args.extra_header,
+        referer=referer,
+        extra_headers=extra_headers,
     )
+
+    include_web_metadata = not args.no_web_metadata
+    if args.browser_preset and not args.no_web_metadata:
+        include_web_metadata = False
 
     try:
         included = collect_included(
@@ -307,6 +435,7 @@ def main() -> None:
             timeout=args.timeout,
             max_pages=args.max_pages,
             verbose=args.verbose,
+            include_web_metadata=include_web_metadata,
         )
     except requests.HTTPError as exc:
         raise SystemExit(f"LinkedIn request failed: {exc}") from exc
