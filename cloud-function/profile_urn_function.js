@@ -11,6 +11,30 @@
 
 const DEFAULT_PROFILE_URL = 'https://www.linkedin.com/in/ramzib/';
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
+const ALLOWED_ORIGINS = process.env.CORS_ALLOW_ORIGINS
+  ? process.env.CORS_ALLOW_ORIGINS.split(',').map((origin) => origin.trim()).filter(Boolean)
+  : ['*'];
+
+function applyCors(req, res) {
+  const requestOrigin = req.headers.origin;
+  let responseOrigin = '*';
+
+  if (!ALLOWED_ORIGINS.includes('*')) {
+    if (requestOrigin && ALLOWED_ORIGINS.includes(requestOrigin)) {
+      responseOrigin = requestOrigin;
+    } else if (ALLOWED_ORIGINS.length) {
+      responseOrigin = ALLOWED_ORIGINS[0];
+    }
+  }
+
+  res.set('Access-Control-Allow-Origin', responseOrigin);
+  res.set('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers'] || 'Content-Type');
+  res.set('Vary', 'Origin');
+  if (responseOrigin !== '*') {
+    res.set('Access-Control-Allow-Credentials', 'true');
+  }
+}
 
 const PRIMARY_COMPONENT_PATTERN = /componentkey[\s:='\"]+com\.linkedin\.sdui\.profile\.card\.ref(?<urn>[A-Za-z0-9_-]+?)(?:Topcard|TopCard)?/i;
 const FALLBACK_COMPONENT_PATTERN = /com\.linkedin\.sdui\.profile\.card\.ref(?<urn>[A-Za-z0-9_-]+?)(?:Topcard|TopCard)?/i;
@@ -270,6 +294,12 @@ async function fetchProfileHtml({ url, cookie, csrfToken, timeoutSeconds = 30 })
 
 exports.profileUrnFetcher = async (req, res) => {
   try {
+    applyCors(req, res);
+    if (req.method === 'OPTIONS') {
+      res.status(204).send('');
+      return;
+    }
+
     const isHealthCheck = req.method === 'GET' && !req.query.url && !req.query.cookie && !req.query.csrfToken;
     if (isHealthCheck) {
       res.json({ status: 'ok' });
