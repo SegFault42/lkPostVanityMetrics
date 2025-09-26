@@ -1,0 +1,2 @@
+gcloud secrets create linkedin-cookie --data-file=cookie.txt
+gcloud secrets create linkedin-csrf --data-file=csrf.txt
