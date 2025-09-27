@@ -5,12 +5,15 @@ const admin = require('firebase-admin');
 
 const PROFILE_URN_FUNCTION_URL = process.env.PROFILE_URN_FUNCTION_URL ||
   'https://us-central1-linkedincreatorleaderboard.cloudfunctions.net/profileUrnFetcher';
+const PROFILE_NETWORK_INFO_URL = process.env.PROFILE_NETWORK_INFO_URL ||
+  'https://us-central1-linkedincreatorleaderboard.cloudfunctions.net/profileNetworkInfoFetcher';
 
 const GRAPHQL_URL = 'https://www.linkedin.com/voyager/api/graphql';
 const QUERY_ID = 'voyagerFeedDashProfileUpdates.80d5abb3cd25edff72c093a5db696079';
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const DEFAULT_COUNT = 100;
-const DEFAULT_TIMEOUT_SECONDS = 30;
+const DEFAULT_TIMEOUT_SECONDS = 300;
+const REQUEST_TIMEOUT_SECONDS = Number(DEFAULT_TIMEOUT_SECONDS);
 const ALLOWED_ORIGINS = process.env.CORS_ALLOW_ORIGINS
   ? process.env.CORS_ALLOW_ORIGINS.split(',').map((origin) => origin.trim()).filter(Boolean)
   : ['*'];
@@ -227,13 +230,15 @@ function extractPaginationToken(payload) {
 }
 
 async function fetchJsonWithTimeout(url, headers, timeoutSeconds) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutSeconds * 1000);
+  const effectiveTimeout = Number(timeoutSeconds);
+  const shouldTimeout = Number.isFinite(effectiveTimeout) && effectiveTimeout > 0;
+  const controller = shouldTimeout ? new AbortController() : null;
+  const timeout = shouldTimeout ? setTimeout(() => controller.abort(), effectiveTimeout * 1000) : null;
   try {
     const response = await fetch(url, {
       method: 'GET',
       headers,
-      signal: controller.signal,
+      signal: controller ? controller.signal : undefined,
     });
     if (!response.ok) {
       const details = await response.text();
@@ -241,7 +246,9 @@ async function fetchJsonWithTimeout(url, headers, timeoutSeconds) {
     }
     return await response.json();
   } finally {
-    clearTimeout(timeout);
+    if (timeout) {
+      clearTimeout(timeout);
+    }
   }
 }
 
@@ -263,7 +270,11 @@ async function collectIncluded({
 
   while (true) {
     const url = buildProfileUpdatesUrl(profileUrn, cursor, count, paginationToken, includeWebMetadata);
-    const payload = await fetchJsonWithTimeout(url, headers, timeoutSeconds);
+    const payload = await fetchJsonWithTimeout(
+      url,
+      headers,
+      Number.isFinite(timeoutSeconds) ? timeoutSeconds : REQUEST_TIMEOUT_SECONDS,
+    );
     const included = Array.isArray(payload.included) ? payload.included : [];
     collected.push(...included);
 
@@ -383,6 +394,34 @@ async function fetchProfileMetadata(targetUrl) {
   return response.json();
 }
 
+async function fetchProfileNetworkInfo(publicId) {
+  if (!publicId) {
+    return null;
+  }
+  if (!PROFILE_NETWORK_INFO_URL) {
+    return null;
+  }
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  try {
+    const response = await fetch(PROFILE_NETWORK_INFO_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ publicId }),
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      return null;
+    }
+    const payload = await response.json();
+    return payload?.data || null;
+  } catch (err) {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function requireEnv(name) {
   const value = process.env[name];
   if (!value) {
@@ -459,11 +498,12 @@ exports.profilePostsFetcher = async (req, res) => {
       csrfToken,
       count,
       includeWebMetadata,
-      timeoutSeconds: DEFAULT_TIMEOUT_SECONDS,
+      timeoutSeconds: REQUEST_TIMEOUT_SECONDS,
     });
 
     const posts = derivePosts(included, profileId);
     const vanity = profileUsername || inferVanity(profileUrl) || profileId;
+    const networkInfo = await fetchProfileNetworkInfo(vanity);
     const docRef = db.collection('creators').doc(vanity);
     await docRef.set({
       id: profileUrn,
@@ -472,6 +512,7 @@ exports.profilePostsFetcher = async (req, res) => {
       url: profileUrl,
       imageUrl: profileImageUrl || null,
       posts,
+      followersCount: networkInfo?.followersCount ?? admin.firestore.FieldValue.delete(),
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
     }, { merge: true });
 
@@ -481,6 +522,7 @@ exports.profilePostsFetcher = async (req, res) => {
       url: profileUrl,
       imageUrl: profileImageUrl || null,
       posts,
+      followersCount: networkInfo?.followersCount ?? null,
       storedAt: new Date().toISOString(),
     });
   } catch (err) {
